@@ -14,6 +14,11 @@ const removeTodo = (id) => ({
   id,
 });
 
+const markCompleted = (id) => ({
+  type: "COMPLETE_TODO",
+  id,
+});
+
 function TodoApp() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
@@ -36,21 +41,30 @@ function TodoApp() {
           onChange={(e) => setInput(e.target.value)}
         ></input>
         <button onClick={handleClicked}>Add todo</button>
-        <ol>
+
+        <table>
+          <tr>
+            <th>Task</th>
+            <th>Completed</th>
+            <th>Action</th>
+          </tr>
           {todos.map((todo) => (
-            <li key={todo.id}>
-              <div>
-                {" "}
-                <p>
-                  {todo.text} {todo.completed}
-                </p>
+            <tr>
+              <td>{todo.text}</td>
+              <td>{todo.completed ? "YES" : "NO"}</td>
+              <td>
                 <button onClick={() => dispatch(removeTodo(todo.id))}>
                   DELETE
                 </button>
-              </div>
-            </li>
+                <input
+                  type="checkbox"
+                  value={input}
+                  onChange={() => dispatch(markCompleted(todo.id))}
+                ></input>
+              </td>
+            </tr>
           ))}
-        </ol>
+        </table>
       </div>
     </React.Fragment>
   );
