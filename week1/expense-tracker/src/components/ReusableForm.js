@@ -1,17 +1,21 @@
 import React from "react";
+import PropType from "prop-types";
 
 function ReusableForm(props) {
   const { buttonText } = props;
   return (
     <React.Fragment>
-      <Form>
-        <input type="date" name="date">
-          Date
-        </input>
+      <form className="form">
+        <input type="date" name="date" />
+
         <button>{buttonText}</button>
-      </Form>
+      </form>
     </React.Fragment>
   );
 }
+
+ReusableForm.propTypes = {
+  buttonText: PropType.string,
+};
 
 export default ReusableForm;

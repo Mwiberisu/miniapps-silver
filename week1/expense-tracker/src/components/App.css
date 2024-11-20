@@ -34,3 +34,7 @@ tr:nth-child(even) {
   padding: 15px 30px;
   margin: 5px;
 }
+
+.form {
+  background-color: purple;
+}

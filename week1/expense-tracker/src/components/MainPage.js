@@ -1,5 +1,6 @@
 import React from "react";
 import ExpenseList from "./ExpenseList";
+import EditExpenseForm from "./EditExpenseForm";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class MainPage extends React.Component {
           type: "income",
         },
       ],
+      creating: false,
+      editing: false,
     };
   }
 
@@ -25,16 +28,28 @@ class MainPage extends React.Component {
     this.setState({ expenses: newExpensesList });
   };
 
+  handleEdit = (expenseId) => {
+    this.setState({ editing: true });
+  };
+
   render() {
-    const page = null;
-    return (
-      <React.Fragment>
+    let page = null;
+
+    if (this.state.creating) {
+    } else if (this.state.editing) {
+      page = <EditExpenseForm />;
+    } else {
+      page = (
         <ExpenseList
           expenses={this.state.expenses}
-          onDelete={this.handleDelete}
+          onClickDelete={this.handleDelete}
+          onClickEdit={this.handleEdit}
+          onClickCreate={this.handleCreate}
         />
-      </React.Fragment>
-    );
+      );
+    }
+
+    return <React.Fragment>{page}</React.Fragment>;
   }
 }
 
