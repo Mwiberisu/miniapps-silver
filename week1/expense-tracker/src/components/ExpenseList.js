@@ -38,7 +38,7 @@ function ExpenseList(props) {
           ))}
         </tbody>
       </table>
-      <hr />
+
       <button className="button">Add Expense</button>
     </React.Fragment>
   );
