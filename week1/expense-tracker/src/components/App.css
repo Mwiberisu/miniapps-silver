@@ -1,7 +1,6 @@
 .app {
   text-align: center;
   background-color: rgb(241, 77, 154);
-  width: 100%;
   margin: 10%;
   border-radius: 12px;
 }
@@ -10,12 +9,13 @@
 }
 /* list table css */
 table {
-  width: 60%;
   background-color: whitesmoke;
-  margin: 5%;
+  width: 90%;
+  margin: auto;
 }
 thead {
   font-weight: bold;
+  background-color: cadetblue;
 }
 td,
 th {
@@ -29,7 +29,7 @@ tr:nth-child(even) {
 
 /* button */
 .button {
-  background-color: aqua;
+  background-color: cadetblue;
   border-radius: 12px;
   padding: 15px 30px;
 }
