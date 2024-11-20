@@ -1,6 +1,7 @@
 import React from "react";
 import ExpenseList from "./ExpenseList";
 import EditExpenseForm from "./EditExpenseForm";
+import AddExpenseForm from "./AddExpenseForm";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -33,6 +34,10 @@ class MainPage extends React.Component {
     this.setState({ editing: true, selectedExpense: expense });
   };
 
+  handleCreate = () => {
+    this.setState({ creating: true });
+  };
+
   updateExpenseInList = (expense) => {
     const editedExpenses = this.state.expenses
       .filter((currentExpense) => currentExpense.id !== expense.id)
@@ -43,11 +48,16 @@ class MainPage extends React.Component {
       selectedExpense: null,
     });
   };
-
+  handleAddExpense = (expense) => {
+    console.log("waaa");
+    const newExpensesList = this.state.expenses.concat(expense);
+    this.setState({ expenses: newExpensesList, creating: false });
+  };
   render() {
     let page = null;
 
     if (this.state.creating) {
+      page = <AddExpenseForm onExpenseAdd={this.handleAddExpense} />;
     } else if (this.state.editing) {
       page = (
         <EditExpenseForm

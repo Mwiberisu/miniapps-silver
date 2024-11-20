@@ -10,14 +10,18 @@ function ReusableForm(props) {
           <label for="expenseDate">Date: </label>
           <input
             type="date"
-            placeholder={expense.expenseDate}
+            placeholder={expense ? expense.expenseDate : "2023-02-02"}
             name="expenseDate"
           />
         </div>
 
         <div>
           <label for="amount">Amount: </label>
-          <input type="number" name="amount" placeholder={expense.amount} />
+          <input
+            type="number"
+            name="amount"
+            placeholder={expense ? expense.amount : 10}
+          />
         </div>
 
         <div>
@@ -25,13 +29,16 @@ function ReusableForm(props) {
           <input
             type="text"
             name="description"
-            placeholder={expense.description}
+            placeholder={expense ? expense.description : "Salary"}
           />
         </div>
 
         <div>
           <label for="expenseType">Type: </label>
-          <select name="expenseType" placeholder={expense.expenseType}>
+          <select
+            name="expenseType"
+            placeholder={expense ? expense.expenseType : "INCOME"}
+          >
             <option value="INCOME">INCOME</option>
             <option value="EXPENSE">EXPENSE</option>
           </select>

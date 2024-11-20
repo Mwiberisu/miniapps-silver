@@ -2,7 +2,7 @@ import React from "react";
 import PropType from "prop-types";
 
 function ExpenseList(props) {
-  const { expenses, onClickDelete, onClickEdit } = props;
+  const { expenses, onClickDelete, onClickEdit, onClickCreate } = props;
   return (
     <React.Fragment>
       <table>
@@ -39,7 +39,9 @@ function ExpenseList(props) {
         </tbody>
       </table>
 
-      <button className="button">Add Expense</button>
+      <button className="button" onClick={() => onClickCreate()}>
+        Add Expense
+      </button>
     </React.Fragment>
   );
 }
@@ -48,5 +50,6 @@ ExpenseList.propTypes = {
   expenses: PropType.array,
   onClickEdit: PropType.func,
   onClickDelete: PropType.func,
+  onClickCreate: PropType.func,
 };
 export default ExpenseList;
