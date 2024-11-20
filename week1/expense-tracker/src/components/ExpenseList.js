@@ -18,15 +18,12 @@ function ExpenseList(props) {
         <tbody>
           {expenses.map((expense) => (
             <tr key={expense.id}>
-              <td>{expense.date}</td>
+              <td>{expense.expenseDate}</td>
               <td>{expense.amount}</td>
               <td>{expense.description}</td>
-              <td>{expense.type}</td>
+              <td>{expense.expenseType}</td>
               <div>
-                <button
-                  className="button"
-                  onClick={() => onClickEdit(expense.id)}
-                >
+                <button className="button" onClick={() => onClickEdit(expense)}>
                   EDIT
                 </button>
                 <button

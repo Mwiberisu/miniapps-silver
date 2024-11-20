@@ -9,14 +9,15 @@ class MainPage extends React.Component {
       expenses: [
         {
           id: 1,
-          date: "2023-03-02",
+          expenseDate: "2023-03-02",
           amount: 200,
           description: "salary",
-          type: "income",
+          expenseType: "INCOME",
         },
       ],
       creating: false,
       editing: false,
+      selectedExpense: null,
     };
   }
 
@@ -28,8 +29,19 @@ class MainPage extends React.Component {
     this.setState({ expenses: newExpensesList });
   };
 
-  handleEdit = (expenseId) => {
-    this.setState({ editing: true });
+  handleEdit = (expense) => {
+    this.setState({ editing: true, selectedExpense: expense });
+  };
+
+  updateExpenseInList = (expense) => {
+    const editedExpenses = this.state.expenses
+      .filter((currentExpense) => currentExpense.id !== expense.id)
+      .concat(expense);
+    this.setState({
+      expenses: editedExpenses,
+      editing: false,
+      selectedExpense: null,
+    });
   };
 
   render() {
@@ -37,7 +49,12 @@ class MainPage extends React.Component {
 
     if (this.state.creating) {
     } else if (this.state.editing) {
-      page = <EditExpenseForm />;
+      page = (
+        <EditExpenseForm
+          expense={this.state.selectedExpense}
+          onExpenseEdit={this.updateExpenseInList}
+        />
+      );
     } else {
       page = (
         <ExpenseList

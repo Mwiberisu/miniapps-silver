@@ -8,10 +8,12 @@
   color: navy;
 }
 /* list table css */
-table {
+table,
+form {
   background-color: whitesmoke;
   width: 90%;
   margin: auto;
+  border-radius: 12px;
 }
 thead {
   font-weight: bold;
@@ -35,6 +37,13 @@ tr:nth-child(even) {
   margin: 5px;
 }
 
-.form {
-  background-color: purple;
+/* form */
+input,
+select {
+  padding: 12px 24px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
