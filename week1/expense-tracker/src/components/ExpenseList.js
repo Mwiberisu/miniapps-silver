@@ -1,14 +1,8 @@
 import React from "react";
+import PropType from "prop-types";
 
-function ExpenseList() {
-  const expenses = [
-    {
-      date: "2023-03-02",
-      amount: 200,
-      description: "salary",
-      type: "income",
-    },
-  ];
+function ExpenseList(props) {
+  const expenses = props.expenses;
   return (
     <React.Fragment>
       <table>
@@ -47,4 +41,7 @@ function ExpenseList() {
   );
 }
 
+ExpenseList.propTypes = {
+  expenses: PropType.array,
+};
 export default ExpenseList;
