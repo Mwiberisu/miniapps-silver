@@ -2,7 +2,12 @@ import React from "react";
 
 function ExpenseList() {
   const expenses = [
-    { date: "2023-03-02", amount: 200, description: "salary", type: "income" },
+    {
+      date: "2023-03-02",
+      amount: 200,
+      description: "salary",
+      type: "income",
+    },
   ];
   return (
     <React.Fragment>
@@ -13,7 +18,7 @@ function ExpenseList() {
             <td>AMOUNT</td>
             <td>DESCRIPTION</td>
             <td>TYPE</td>
-            <td>ACTION</td>
+            <td>ACTIONS</td>
           </tr>
         </thead>
         <tbody>
@@ -23,7 +28,15 @@ function ExpenseList() {
               <td>{expense.amount}</td>
               <td>{expense.description}</td>
               <td>{expense.type}</td>
-              <button className="button">Edit</button>
+              <div>
+                <button className="button">EDIT</button>
+                <button
+                  className="button"
+                  style={{ backgroundColor: "hotpink" }}
+                >
+                  DELETE
+                </button>
+              </div>
             </tr>
           ))}
         </tbody>
