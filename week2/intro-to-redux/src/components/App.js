@@ -1,10 +1,13 @@
 import React from "react";
-// import Counter from "./Counter";
+import Counter from "./Counter";
 import TodoApp from "./TodoApp";
 import "./App.css";
 
-import { configureStore } from "@reduxjs/toolkit";
+import { applyMiddleware, configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
+import { thunk } from "redux-thunk";
+
+import Posts from "./Posts";
 
 // reducer definition
 const counterReducer = (state = 0, action) => {
@@ -35,15 +38,35 @@ const todoReducer = (state = [], action) => {
   }
 };
 
+const postsReducer = (
+  state = { posts: [], loading: false, error: "" },
+  action
+) => {
+  switch (action.type) {
+    case "FETCH_POSTS_REQUEST":
+      return { ...state, loading: true };
+    case "FETCH_POSTS_SUCCESS":
+      return { posts: action.payload, loading: false, error: "" };
+    case "FETCH_POSTS_FAILURE":
+      return { posts: [], loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
 // store definition
-const store = configureStore({ reducer: todoReducer });
+const store = configureStore({
+  reducer: postsReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+});
 
 function App() {
   return (
     <React.Fragment>
       <Provider store={store}>
         {/* <Counter /> */}
-        <TodoApp />
+        {/* <TodoApp /> */}
+        <Posts />
       </Provider>
     </React.Fragment>
   );
