@@ -1,0 +1,35 @@
+.app {
+  text-align: center;
+  background-color: rgb(241, 77, 154);
+  width: 100%;
+  margin: 10%;
+  border-radius: 12px;
+}
+.header {
+  color: aqua;
+}
+/* list table css */
+table {
+  width: 60%;
+  background-color: whitesmoke;
+  margin: 5%;
+}
+thead {
+  font-weight: bold;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* button */
+.button {
+  background-color: aqua;
+  border-radius: 12px;
+  padding: 15px 30px;
+}
