@@ -2,7 +2,7 @@ import React from "react";
 import PropType from "prop-types";
 
 function ExpenseList(props) {
-  const expenses = props.expenses;
+  const { expenses, onDelete } = props;
   return (
     <React.Fragment>
       <table>
@@ -17,7 +17,7 @@ function ExpenseList(props) {
         </thead>
         <tbody>
           {expenses.map((expense) => (
-            <tr>
+            <tr key={expense.id}>
               <td>{expense.date}</td>
               <td>{expense.amount}</td>
               <td>{expense.description}</td>
@@ -27,6 +27,7 @@ function ExpenseList(props) {
                 <button
                   className="button"
                   style={{ backgroundColor: "hotpink" }}
+                  onClick={() => onDelete(expense.id)}
                 >
                   DELETE
                 </button>
@@ -43,5 +44,6 @@ function ExpenseList(props) {
 
 ExpenseList.propTypes = {
   expenses: PropType.array,
+  onDelete: PropType.func,
 };
 export default ExpenseList;

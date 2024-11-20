@@ -7,6 +7,7 @@ class MainPage extends React.Component {
     this.state = {
       expenses: [
         {
+          id: 1,
           date: "2023-03-02",
           amount: 200,
           description: "salary",
@@ -15,11 +16,23 @@ class MainPage extends React.Component {
       ],
     };
   }
+
+  handleDelete = (expenseId) => {
+    const newExpensesList = this.state.expenses.filter(
+      (expense) => expense.id !== expenseId
+    );
+
+    this.setState({ expenses: newExpensesList });
+  };
+
   render() {
     const page = null;
     return (
       <React.Fragment>
-        <ExpenseList expenses={this.state.expenses} />
+        <ExpenseList
+          expenses={this.state.expenses}
+          onDelete={this.handleDelete}
+        />
       </React.Fragment>
     );
   }
