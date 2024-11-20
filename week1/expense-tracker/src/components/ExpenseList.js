@@ -22,7 +22,7 @@ function ExpenseList(props) {
               <td>{expense.amount}</td>
               <td>{expense.description}</td>
               <td>{expense.expenseType}</td>
-              <div>
+              <td>
                 <button className="button" onClick={() => onClickEdit(expense)}>
                   EDIT
                 </button>
@@ -33,7 +33,7 @@ function ExpenseList(props) {
                 >
                   DELETE
                 </button>
-              </div>
+              </td>
             </tr>
           ))}
         </tbody>
