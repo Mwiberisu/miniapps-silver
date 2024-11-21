@@ -1,0 +1,52 @@
+.app {
+  text-align: center;
+  background-color: palevioletred;
+  margin: 10%;
+  border-radius: 12px;
+}
+.header {
+  color: navy;
+}
+/* list table css */
+table,
+form {
+  background-color: whitesmoke;
+  width: 90%;
+  margin: auto;
+}
+thead {
+  font-weight: bold;
+  background-color: cadetblue;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: pink;
+}
+
+/* button */
+.button {
+  background-color: cadetblue;
+  border-radius: 12px;
+  padding: 15px 30px;
+  margin: 5px;
+}
+
+/* form */
+input,
+select {
+  padding: 12px 24px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.footer {
+  font-style: italic;
+}
