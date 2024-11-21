@@ -4,29 +4,33 @@ A simple app for tracking expenses
 
 ## How to run the app
 
-In the project directory, you can run:
+1. Clone this repository.
+2. Navigate to the folder where the repo is cloned, and open week1/expense-tracker folder. i.e
 
-### `cd expense-tracker`
+   `cd week1/expense-tracker`
 
-### `npm start`
+3. Run the following commands
 
-Runs the app in the development mode.\
+```bash
+1. npm install
+2. npm start
+```
+
+This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Component Tree
+
+![component tree](components.png)
 
 ## Author
 
-###
+[github/Mwiberisu](https://github.com/Mwiberisu)
 
-Income/Expenses
-Date
-Amount
-Description
-Savings
-Total income - Total Expenses
+## License
 
-Actions:
-Add(C)
-View(R)
-Edit(U)
-Delete(D)
-List all expenses/income
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Copyright
+
+Copyright © 2024, [Susan Mwiberi](https://github.com/Mwiberisu).
