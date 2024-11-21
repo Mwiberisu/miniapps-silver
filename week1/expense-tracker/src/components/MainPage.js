@@ -49,7 +49,6 @@ class MainPage extends React.Component {
     });
   };
   handleAddExpense = (expense) => {
-    console.log("waaa");
     const newExpensesList = this.state.expenses.concat(expense);
     this.setState({ expenses: newExpensesList, creating: false });
   };
