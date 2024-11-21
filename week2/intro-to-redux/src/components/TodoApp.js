@@ -30,7 +30,7 @@ function TodoApp() {
     }
   };
 
-  const todos = useSelector((state) => state);
+  const todos = useSelector((state) => state.todos);
   return (
     <React.Fragment>
       <h1>Todos</h1>

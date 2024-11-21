@@ -16,7 +16,7 @@ const fetchPosts = () => async (dispatch) => {
 };
 function Posts() {
   const dispatch = useDispatch();
-  const { posts, loading, error } = useSelector((state) => state);
+  const { posts, loading, error } = useSelector((state) => state.posts);
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);

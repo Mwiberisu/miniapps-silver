@@ -7,7 +7,7 @@ const decrement = () => ({ type: "DECREMENT" });
 const reset = () => ({ type: "RESET" });
 
 function Counter() {
-  const count = useSelector((state) => state);
+  const count = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   return (
     <React.Fragment>
