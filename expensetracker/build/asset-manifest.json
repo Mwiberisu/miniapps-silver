@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/miniapps-silver/expense-tracker/static/css/main.ce9d2258.css",
+    "main.js": "/miniapps-silver/expense-tracker/static/js/main.ccccb9e1.js",
+    "static/js/453.50385a13.chunk.js": "/miniapps-silver/expense-tracker/static/js/453.50385a13.chunk.js",
+    "index.html": "/miniapps-silver/expense-tracker/index.html",
+    "main.ce9d2258.css.map": "/miniapps-silver/expense-tracker/static/css/main.ce9d2258.css.map",
+    "main.ccccb9e1.js.map": "/miniapps-silver/expense-tracker/static/js/main.ccccb9e1.js.map",
+    "453.50385a13.chunk.js.map": "/miniapps-silver/expense-tracker/static/js/453.50385a13.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce9d2258.css",
+    "static/js/main.ccccb9e1.js"
+  ]
+}
