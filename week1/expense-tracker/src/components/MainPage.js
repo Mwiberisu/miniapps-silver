@@ -53,6 +53,7 @@ class MainPage extends React.Component {
     this.setState({ expenses: newExpensesList, creating: false });
   };
   render() {
+    document.title = "Expense Tracker";
     let page = null;
 
     if (this.state.creating) {
