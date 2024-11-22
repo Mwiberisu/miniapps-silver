@@ -17,7 +17,7 @@ A simple app for tracking expenses
 ```
 
 This runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000/miniapps-silver](http://localhost:3000/miniapps-silver) to view it in your browser.
 
 Aleternatively, open [https://mwiberisu.github.io/miniapps-silver/](https://mwiberisu.github.io/miniapps-silver/) for a working version
 

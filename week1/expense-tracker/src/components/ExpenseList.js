@@ -38,46 +38,47 @@ function ExpenseList(props) {
             ]}
           />
         </div>
-
-        <table>
-          <thead>
-            <tr>
-              <td>DATE</td>
-              <td>AMOUNT</td>
-              <td>DESCRIPTION</td>
-              <td>TYPE</td>
-              <td>ACTIONS</td>
-            </tr>
-          </thead>
-          <tbody>
-            {expenses.map((expense) => (
-              <tr key={expense.id}>
-                <td>{expense.expenseDate}</td>
-                <td>{expense.amount}</td>
-                <td>{expense.description}</td>
-                <td>{expense.expenseType}</td>
-                <td>
-                  <button
-                    className="button"
-                    onClick={() => onClickEdit(expense)}
-                  >
-                    EDIT
-                  </button>
-                  <button
-                    className="button"
-                    style={{ backgroundColor: "hotpink" }}
-                    onClick={() => onClickDelete(expense.id)}
-                  >
-                    DELETE
-                  </button>
-                </td>
+        <div style={{ overflowX: "auto" }}>
+          <table>
+            <thead>
+              <tr>
+                <td>DATE</td>
+                <td>AMOUNT</td>
+                <td>DESCRIPTION</td>
+                <td>TYPE</td>
+                <td>ACTIONS</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <button className="button" onClick={() => onClickCreate()}>
-          Add Expense
-        </button>
+            </thead>
+            <tbody>
+              {expenses.map((expense) => (
+                <tr key={expense.id}>
+                  <td>{expense.expenseDate}</td>
+                  <td>{expense.amount}</td>
+                  <td>{expense.description}</td>
+                  <td>{expense.expenseType}</td>
+                  <td>
+                    <button
+                      className="button"
+                      onClick={() => onClickEdit(expense)}
+                    >
+                      EDIT
+                    </button>
+                    <button
+                      className="button"
+                      style={{ backgroundColor: "hotpink" }}
+                      onClick={() => onClickDelete(expense.id)}
+                    >
+                      DELETE
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button className="button" onClick={() => onClickCreate()}>
+            Add Expense
+          </button>
+        </div>
       </div>
     </React.Fragment>
   );
