@@ -65,8 +65,20 @@ class MainPage extends React.Component {
         />
       );
     } else {
+      let totalIncome = 0;
+      let totalExpenses = 0;
+      this.state.expenses.forEach((expense) => {
+        if (expense.expenseType === "INCOME") {
+          totalIncome += parseInt(expense.amount);
+        } else {
+          totalExpenses += parseInt(expense.amount);
+        }
+      });
       page = (
         <ExpenseList
+          savings={totalIncome - totalExpenses}
+          totalIncome={totalIncome}
+          totalExpenses={totalExpenses}
           expenses={this.state.expenses}
           onClickDelete={this.handleDelete}
           onClickEdit={this.handleEdit}

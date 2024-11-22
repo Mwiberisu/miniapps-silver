@@ -2,7 +2,7 @@
   "name": "expense-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mwiberisu.github.io/miniapps-silver",
+  "homepage": "https://mwiberisu.github.io/miniapps-silver/expensetracker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +10,7 @@
     "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-minimal-pie-chart": "^8.4.1",
     "react-scripts": "5.0.1",
     "uuid": "^11.0.3",
     "web-vitals": "^2.1.4"
@@ -19,8 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "rm -rf node_modules/.cache/gh-pages && npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "rm -rf node_modules/.cache/gh-pages && npm run build && cp -af build/. newbuild/expensetracker/ && rm -rf build && cp -af newbuild build",
+    "deploy": "gh-pages -d build -b gh-pages"
   },
   "eslintConfig": {
     "extends": [

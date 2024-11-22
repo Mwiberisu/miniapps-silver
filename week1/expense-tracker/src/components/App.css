@@ -50,3 +50,9 @@ select {
 .footer {
   font-style: italic;
 }
+
+.piechart {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+}
