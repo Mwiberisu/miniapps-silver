@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+div {
+  border: 1px;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  display: block;
+}
+
+.header {
+  background-color: pink;
+}
+
+.footer {
+  background-color: lightblue;
+}
