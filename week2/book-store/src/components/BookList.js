@@ -32,12 +32,16 @@ function BookList() {
       <ul>
         {popularBooks.map((book) => (
           <div key={book.id} className="book-container">
-            <img src={book.cover} width="500" height="600" alt="book cover" />
-            <h1>{book.name}</h1>
-            <p>{book.rating}</p>
-            <a href={book.url} target="_blank">
-              Good Reads
-            </a>
+            <div className="book-details">
+              <img src={book.cover} alt="book cover" />
+            </div>
+            <div className="book-details">
+              <h3>{book.name}</h3>
+              <p>{book.rating}</p>
+              <a href={book.url} target="_blank">
+                Good Reads
+              </a>
+            </div>
           </div>
         ))}
       </ul>
