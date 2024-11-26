@@ -1,4 +1,4 @@
-# Expense Tracker
+# The Book Bar
 
 A simple Book Store app that uses redux for state management
 

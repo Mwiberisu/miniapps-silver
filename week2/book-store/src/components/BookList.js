@@ -28,7 +28,7 @@ function BookList() {
   if (error) return <p>Error detected: {error}</p>;
 
   return (
-    <div>
+    <div className="book-list">
       <ul>
         {popularBooks.map((book) => (
           <div key={book.id} className="book-container">

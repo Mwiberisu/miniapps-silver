@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  color: darkviolet;
+  background-color: whitesmoke;
+  font-family: "Times New Roman", Times, serif, cursive;
 }
 
 div {
@@ -16,13 +19,20 @@ div {
 
 .footer {
   background-color: lightblue;
+  font-style: italic;
 }
-
+.book-list {
+  display: flex;
+}
 .book-container {
   display: flex;
   background-color: aquamarine;
-  text-align: justify;
+  text-align: center;
+  width: 40%;
+  float: left;
+  height: 10%;
 }
+
 .book-details {
   width: 50%;
 }
