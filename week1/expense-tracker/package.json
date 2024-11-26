@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "rm -rf node_modules/.cache/gh-pages && npm run build && cp -af build/. newbuild/expensetracker/ && rm -rf build && cp -af newbuild build",
-    "deploy": "gh-pages -d build -b gh-pages"
+    "deploy": "gh-pages -d build -b gh-pages --add"
   },
   "eslintConfig": {
     "extends": [
