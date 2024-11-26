@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/miniapps-silver/bookstore/static/css/main.44ef2162.css",
-    "main.js": "/miniapps-silver/bookstore/static/js/main.9449d479.js",
+    "main.css": "/miniapps-silver/bookstore/static/css/main.f312f6e4.css",
+    "main.js": "/miniapps-silver/bookstore/static/js/main.76b3cd77.js",
     "static/js/453.d3d39a9b.chunk.js": "/miniapps-silver/bookstore/static/js/453.d3d39a9b.chunk.js",
     "index.html": "/miniapps-silver/bookstore/index.html",
-    "main.44ef2162.css.map": "/miniapps-silver/bookstore/static/css/main.44ef2162.css.map",
-    "main.9449d479.js.map": "/miniapps-silver/bookstore/static/js/main.9449d479.js.map",
+    "main.f312f6e4.css.map": "/miniapps-silver/bookstore/static/css/main.f312f6e4.css.map",
+    "main.76b3cd77.js.map": "/miniapps-silver/bookstore/static/js/main.76b3cd77.js.map",
     "453.d3d39a9b.chunk.js.map": "/miniapps-silver/bookstore/static/js/453.d3d39a9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44ef2162.css",
-    "static/js/main.9449d479.js"
+    "static/css/main.f312f6e4.css",
+    "static/js/main.76b3cd77.js"
   ]
 }
