@@ -16,7 +16,7 @@ const fetchPopularBooks = () => async (dispatch) => {
 };
 
 function BookList() {
-  document.title = "Book Store";
+  document.title = "Book Bar";
 
   const { popularBooks, error } = useSelector((state) => state);
 
