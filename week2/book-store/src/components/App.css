@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+  color: darkviolet;
+  background-color: whitesmoke;
+  font-family: "Times New Roman", Times, serif, cursive;
+}
+
+div {
+  border: 1px;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  display: block;
+}
+
+.header {
+  background-color: pink;
+}
+
+.footer {
+  background-color: lightblue;
+  font-style: italic;
+}
+.book-list {
+  display: flex;
+}
+.book-container {
+  display: flex;
+  background-color: aquamarine;
+  text-align: center;
+  width: 40%;
+  float: left;
+  height: 8%;
+}
+
+.book-details {
+  width: 45%;
+}
+
+img {
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* search form */
+input[type="text"],
+button {
+  padding: 10px;
+  border: 1px solid grey;
+  color: purple;
+}
+input[type="text"] {
+  width: 70%;
+  background: aquamarine;
+}
+
+button {
+  width: 20%;
+  background: pink;
+  border-left: none;
+  cursor: pointer;
+}
