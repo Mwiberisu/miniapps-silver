@@ -8,8 +8,8 @@
 div {
   border: 1px;
   border-radius: 25px;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
   display: block;
 }
 
@@ -30,14 +30,33 @@ div {
   text-align: center;
   width: 40%;
   float: left;
-  height: 10%;
+  height: 8%;
 }
 
 .book-details {
-  width: 50%;
+  width: 45%;
 }
 
 img {
   border-radius: 12px;
   width: 100%;
+}
+
+/* search form */
+input[type="text"],
+button {
+  padding: 10px;
+  border: 1px solid grey;
+  color: purple;
+}
+input[type="text"] {
+  width: 70%;
+  background: aquamarine;
+}
+
+button {
+  width: 20%;
+  background: pink;
+  border-left: none;
+  cursor: pointer;
 }

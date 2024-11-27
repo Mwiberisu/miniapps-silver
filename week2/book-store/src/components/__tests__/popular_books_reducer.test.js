@@ -25,6 +25,7 @@ describe("popular_books_reducer", () => {
     expect(PopularBooksReducer({}, action)).toEqual({
       popularBooks: books,
       error: "",
+      foundBooks: [],
     });
   });
 
@@ -39,6 +40,7 @@ describe("popular_books_reducer", () => {
     expect(PopularBooksReducer({}, action)).toEqual({
       popularBooks: [],
       error: error,
+      foundBooks: [],
     });
   });
 
@@ -49,5 +51,39 @@ describe("popular_books_reducer", () => {
       type: "LOAD_POPULAR_BOOKS_INITIALIZE",
     };
     expect(PopularBooksReducer({}, action)).toEqual({});
+  });
+
+  // test 5
+  const bookSearch = [
+    {
+      book_id: "57899793",
+      position: "15",
+      name: "All My Rage",
+      cover:
+        "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1629908086i/57899793.jpg",
+      rating: 4.62,
+      url: "https://www.goodreads.com/book/show/57899793-all-my-rage",
+    },
+    {
+      book_id: "57899793",
+      position: "15",
+      name: "All My Rage",
+      cover:
+        "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1629908086i/57899793.jpg",
+      rating: 4.62,
+      url: "https://www.goodreads.com/book/show/57899793-all-my-rage",
+    },
+  ];
+  test("Should successfully search a book from list of loaded books", () => {
+    action = {
+      type: "SEARCH_BOOK",
+      searchString: "All My Rage",
+    };
+    let state = { popularBooks: bookSearch, foundBooks: [] };
+    expect(PopularBooksReducer(state, action)).toEqual({
+      popularBooks: bookSearch,
+      foundBooks: bookSearch,
+      error: "",
+    });
   });
 });
