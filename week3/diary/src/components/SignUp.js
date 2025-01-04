@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { auth } from "./firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-function Login() {
+function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignIn = () => {
+  const handleSignUp = async () => {
     try {
       if (!email) {
         alert("Please enter a valid email");
@@ -17,15 +18,16 @@ function Login() {
         return;
       }
 
-      alert("Login successful");
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert(`Account with username ${email} created successfully`);
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <div className="login">
-      <h1>Sign In </h1>
+    <div className="signup">
+      <h1>Sign Up </h1>
       <input
         type="email"
         name="email"
@@ -40,9 +42,9 @@ function Login() {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
-      <button onClick={handleSignIn}>Sign In</button>
+      <button onClick={handleSignUp}>Sign Up</button>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;
