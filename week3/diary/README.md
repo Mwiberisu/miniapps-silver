@@ -35,11 +35,7 @@ Alternatively, open [https://mwiberisu.github.io/miniapps-silver/diary/](https:/
 
    Run below deploy command, which will push the build folder to gh-pages branch on github
 
-   `npm run deploy -- -m "Deploy book store"`
-
-## Component Tree
-
-![component tree](components.png)
+   `npm run deploy -- -m "Deploy Diary App`
 
 ## Author
 

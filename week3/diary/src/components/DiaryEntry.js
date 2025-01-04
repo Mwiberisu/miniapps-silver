@@ -7,19 +7,21 @@ function DiaryEntry() {
       <form>
         <h2>A Story from {currentDate.toDateString()}</h2>
         <p>Give your day a title</p>
-        <input type="text" placeholder="A Nice Ass Day" />
+        <input type="text" name="diary-title" placeholder="A Nice Ass Day" />
 
         <p>What happened today?</p>
         <textarea
           rows={10}
+          name="diary-entry"
           placeholder="Dear diary;&#13;&#10;Today, I had a great day filled with exciting
         adventures. I went to the park with my friends, and even caught a
         beautiful sunset!......"
         ></textarea>
 
-        <p>A memory or person I'm thankful for ..</p>
+        <p>Favorite memory from the day...</p>
         <input
           type="text"
+          name="favorite-memory"
           placeholder="Suzannah, for making me happy when..."
         />
 
