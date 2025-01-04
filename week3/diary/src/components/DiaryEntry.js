@@ -5,7 +5,7 @@ function DiaryEntry() {
   return (
     <div className="diary-entry">
       <form>
-        <h1>A Story from {currentDate.toDateString()}</h1>
+        <h2>A Story from {currentDate.toDateString()}</h2>
         <p>Give your day a title</p>
         <input type="text" placeholder="A Nice Ass Day" />
 
