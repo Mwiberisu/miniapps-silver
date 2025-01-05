@@ -1,9 +1,19 @@
 import React from "react";
+import { auth } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 function DiaryEntry() {
   const currentDate = new Date();
+  const currentUser = auth.currentUser;
+  let navigate = useNavigate();
+
+  if (!currentUser) {
+    navigate("/login");
+    return;
+  }
   return (
     <div className="diary-entry">
+      <p>Hello {currentUser.email}</p>
       <form>
         <h2>A Story from {currentDate.toDateString()}</h2>
         <p>Give your day a title</p>

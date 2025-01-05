@@ -21,6 +21,11 @@ Open [http://localhost:3000/miniapps-silver/diary](http://localhost:3000/miniapp
 
 Alternatively, open [https://mwiberisu.github.io/miniapps-silver/diary/](https://mwiberisu.github.io/miniapps-silver/diary/) for a working version
 
+Sample login credentials
+
+- User: mwiberi@diary.com
+- Password: mwiberi
+
 ## How to deploy the app
 
 1. Clone this repository.

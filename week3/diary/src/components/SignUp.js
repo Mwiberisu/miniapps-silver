@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { auth } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  let navigate = useNavigate();
 
   const handleSignUp = async () => {
     try {
@@ -20,6 +23,7 @@ function SignUp() {
 
       await createUserWithEmailAndPassword(auth, email, password);
       alert(`Account with username ${email} created successfully`);
+      navigate("/deardiary");
     } catch (error) {
       alert(error.message);
     }

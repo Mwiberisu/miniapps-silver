@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { auth } from "./firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     try {
       if (!email) {
         alert("Please enter a valid email");
@@ -16,8 +19,15 @@ function Login() {
         alert("Please enter a valid password");
         return;
       }
+      const login_response = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = login_response.user;
 
-      alert("Login successful");
+      alert(`Login for user ${user.email} successful`);
+      navigate("/deardiary");
     } catch (error) {
       alert(error.message);
     }
