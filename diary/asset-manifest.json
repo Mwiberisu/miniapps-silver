@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/miniapps-silver/diary/static/css/main.c45ca1d7.css",
-    "main.js": "/miniapps-silver/diary/static/js/main.c25ec40f.js",
+    "main.js": "/miniapps-silver/diary/static/js/main.d9041485.js",
     "static/js/453.f6967a54.chunk.js": "/miniapps-silver/diary/static/js/453.f6967a54.chunk.js",
     "index.html": "/miniapps-silver/diary/index.html",
     "main.c45ca1d7.css.map": "/miniapps-silver/diary/static/css/main.c45ca1d7.css.map",
-    "main.c25ec40f.js.map": "/miniapps-silver/diary/static/js/main.c25ec40f.js.map",
+    "main.d9041485.js.map": "/miniapps-silver/diary/static/js/main.d9041485.js.map",
     "453.f6967a54.chunk.js.map": "/miniapps-silver/diary/static/js/453.f6967a54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c45ca1d7.css",
-    "static/js/main.c25ec40f.js"
+    "static/js/main.d9041485.js"
   ]
 }
