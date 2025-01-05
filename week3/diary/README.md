@@ -24,7 +24,6 @@ Alternatively, open [https://mwiberisu.github.io/miniapps-silver/diary/](https:/
 Sample login credentials
 
 - User: mwiberi@diary.com
-- Password: mwiberi
 
 ## How to deploy the app
 
