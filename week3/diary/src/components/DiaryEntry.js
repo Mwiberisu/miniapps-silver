@@ -1,20 +1,24 @@
 import React, { useState } from "react";
-import { auth } from "./firebase";
+import { firestore } from "./firebase";
 import { useNavigate } from "react-router-dom";
+import { addDoc, collection } from "firebase/firestore";
+import { UserAuth } from "./UserAuth";
 
 function DiaryEntry() {
   const currentDate = new Date();
-  const currentUser = auth.currentUser;
   const [diaryTitle, setDiaryTitle] = useState("");
   const [diaryEntry, setDiaryEntry] = useState("");
   const [favoriteMemory, setFavoriteMemory] = useState("");
   let navigate = useNavigate();
+  const { user, isSignedIn } = UserAuth();
 
-  if (!currentUser) {
+  if (!isSignedIn) {
     navigate("/login");
+    return;
   }
 
-  const handleAddDiaryRecord = async () => {
+  const handleAddDiaryRecord = async (event) => {
+    event.preventDefault();
     try {
       if (!diaryTitle) {
         alert("Please enter a title");
@@ -31,6 +35,14 @@ function DiaryEntry() {
         return;
       }
 
+      // add record
+      await addDoc(collection(firestore, "diary_entries"), {
+        date: currentDate,
+        diaryTitle: diaryTitle,
+        diaryEntry: diaryEntry,
+        favoriteMemory: favoriteMemory,
+        userId: user.uid,
+      });
       alert("Diary entry added successfully");
       navigate("/pastentries");
     } catch (error) {
@@ -40,7 +52,7 @@ function DiaryEntry() {
 
   return (
     <div className="diary-entry">
-      <p>Hello {currentUser.email}</p>
+      <p>Hello {user.email}</p>
       <form>
         <h2>A Story from {currentDate.toDateString()}</h2>
         <p>Give your day a title</p>

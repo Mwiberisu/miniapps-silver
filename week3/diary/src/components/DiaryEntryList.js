@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { auth, firestore } from "./firebase";
+import { firestore } from "./firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { UserAuth } from "./UserAuth";
 
 function DiaryEntryList() {
   let navigate = useNavigate();
-  const currentUser = auth.currentUser;
   const [diaryEntries, setDiaryEntries] = useState([]);
+  const { isSignedIn } = UserAuth();
 
-  if (!currentUser) {
-    navigate("/login");
-  }
+  useEffect(() => {
+    fetchDiaryEntries();
+  }, []);
 
   const fetchDiaryEntries = async () => {
     try {
@@ -27,12 +28,31 @@ function DiaryEntryList() {
     }
   };
 
-  useEffect(() => {
-    fetchDiaryEntries();
-  }, []);
+  if (!isSignedIn) {
+    navigate("/login");
+    return;
+  }
+
   return (
     <div>
-      <h1>Past Records</h1>
+      <article>
+        <ul className="pastentries">
+          {diaryEntries.map((diaryEntry) => (
+            <li key={diaryEntry.id}>
+              <h4>
+                <u>
+                  {diaryEntry.diaryTitle}:
+                  {new Date(diaryEntry.date.toDate()).toDateString()}
+                </u>
+              </h4>
+
+              <span>{diaryEntry.diaryEntry}</span>
+              <p>Favorite Memory: {diaryEntry.favoriteMemory}</p>
+              <hr class="rounded"></hr>
+            </li>
+          ))}
+        </ul>
+      </article>
     </div>
   );
 }
