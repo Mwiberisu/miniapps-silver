@@ -39,7 +39,7 @@ Sample login credentials
 
    Run below deploy command, which will push the build folder to gh-pages branch on github
 
-   `npm run deploy -- -m "Deploy Diary App`
+   `npm run deploy -- -m "Deploy Diary App"`
 
 ## Author
 
