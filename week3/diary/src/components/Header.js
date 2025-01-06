@@ -17,6 +17,9 @@ function Header() {
         <li>
           <Link to="/pastentries">Past Entries</Link>
         </li>
+        <li>
+          <Link to="/logout">Log Out</Link>
+        </li>
       </ul>
       <hr />
       <h1>Stories From My Life</h1>

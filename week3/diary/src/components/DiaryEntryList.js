@@ -7,9 +7,20 @@ import { UserAuth } from "./UserAuth";
 function DiaryEntryList() {
   let navigate = useNavigate();
   const [diaryEntries, setDiaryEntries] = useState([]);
-  const { user, isSignedIn } = UserAuth();
+  const { user, pending, isSignedIn } = UserAuth();
 
   useEffect(() => {
+    if (pending) {
+      return () => {
+        <h1>Loading...</h1>;
+      };
+    }
+
+    if (!isSignedIn) {
+      navigate("/login");
+      return () => {};
+    }
+
     fetchDiaryEntries();
   });
 
@@ -30,11 +41,6 @@ function DiaryEntryList() {
       alert(error.message);
     }
   };
-
-  if (!isSignedIn) {
-    navigate("/login");
-    return;
-  }
 
   return (
     <div>

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./SignUp";
 import DiaryEntryList from "./DiaryEntryList";
 import { UserAuth } from "./UserAuth";
+import Logout from "./Logout";
 
 function App() {
   document.title = "Dear Diary";
@@ -33,6 +34,7 @@ function Root() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/deardiary" element={<DiaryEntry />} />
         <Route path="/pastentries" element={<DiaryEntryList />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </div>
   );
