@@ -10,7 +10,11 @@ function DiaryEntry() {
   const [diaryEntry, setDiaryEntry] = useState("");
   const [favoriteMemory, setFavoriteMemory] = useState("");
   let navigate = useNavigate();
-  const { user, isSignedIn } = UserAuth();
+  const { user, isSignedIn, pending } = UserAuth();
+
+  if (pending) {
+    return <h1>Loading...</h1>;
+  }
 
   if (!isSignedIn) {
     navigate("/login");

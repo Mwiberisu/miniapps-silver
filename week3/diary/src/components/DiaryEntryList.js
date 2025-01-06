@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { firestore } from "./firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "./UserAuth";
 
 function DiaryEntryList() {
   let navigate = useNavigate();
   const [diaryEntries, setDiaryEntries] = useState([]);
-  const { user, isSignedIn } = UserAuth();
+  const { user, pending, isSignedIn } = UserAuth();
 
   useEffect(() => {
+    if (pending) {
+      return () => {
+        <h1>Loading...</h1>;
+      };
+    }
+
+    if (!isSignedIn) {
+      navigate("/login");
+      return () => {};
+    }
+
     fetchDiaryEntries();
   });
 
@@ -17,7 +28,8 @@ function DiaryEntryList() {
     try {
       const q = query(
         collection(firestore, "diary_entries"),
-        where("userId", "==", user.uid)
+        where("userId", "==", user.uid),
+        orderBy("date", "desc")
       );
       const diaryRef = await getDocs(q);
 
@@ -30,11 +42,6 @@ function DiaryEntryList() {
       alert(error.message);
     }
   };
-
-  if (!isSignedIn) {
-    navigate("/login");
-    return;
-  }
 
   return (
     <div>
