@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { firestore } from "./firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "./UserAuth";
 
@@ -28,7 +28,8 @@ function DiaryEntryList() {
     try {
       const q = query(
         collection(firestore, "diary_entries"),
-        where("userId", "==", user.uid)
+        where("userId", "==", user.uid),
+        orderBy("date", "desc")
       );
       const diaryRef = await getDocs(q);
 
