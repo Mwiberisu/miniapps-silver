@@ -1,4 +1,4 @@
-# The Book Bar
+# Dear Diary
 
 A simple diary app for keeping everyday memories
 
